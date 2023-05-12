@@ -1,0 +1,10 @@
+mat-toolbar {
+  height: 7.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-btns {
+  display: flex;
+  gap: 1rem;
+}

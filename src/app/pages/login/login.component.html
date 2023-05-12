@@ -1,0 +1,58 @@
+<div class="form">
+  <div class="login-container">
+    <div class="login-content">
+      <mat-toolbar class="login-toolbar" color="primary">Login</mat-toolbar>
+      <mat-card>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+          <mat-form-field>
+            <mat-icon matPrefix>person_outline</mat-icon>
+            <input
+              id="email"
+              type="email"
+              matInput
+              placeholder="Email"
+              formControlName="email"
+            />
+            <mat-error *ngIf="loginForm.controls.email.hasError('required')">
+              Email is required
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls.email.hasError('email')">
+              Invalid email format
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-icon matPrefix>lock_outline</mat-icon>
+            <input
+              id="password"
+              type="password"
+              autocomplete="false"
+              matInput
+              placeholder="Password"
+              formControlName="password"
+            />
+            <mat-error *ngIf="loginForm.controls.password.hasError('required')">
+              Password is required
+            </mat-error>
+            <mat-error
+              *ngIf="loginForm.controls.password.hasError('minlength')"
+            >
+              Password must be at least 8 characters long
+            </mat-error>
+          </mat-form-field>
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="loginForm.status === 'INVALID'"
+          >
+            LOGIN
+          </button>
+        </form>
+        <span>
+          If You don't have an account yet please
+          <a routerLink="/register">REGISTER HERE</a></span
+        >
+      </mat-card>
+    </div>
+  </div>
+</div>
