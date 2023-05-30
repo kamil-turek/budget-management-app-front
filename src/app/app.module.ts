@@ -9,9 +9,12 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AddRecordComponent } from './pages/dashboard/add-record/add-record.component';
+import { SummaryCardComponent } from './pages/dashboard/summary-card/summary-card.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    AddRecordComponent,
+    SummaryCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +33,12 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
