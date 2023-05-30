@@ -1,0 +1,66 @@
+<mat-card>
+  <mat-card-content>
+    <h2>Add Record</h2>
+    <form (ngSubmit)="onSubmit()" #recordForm="ngForm" novalidate>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Name"
+          name="name"
+          ngModel
+          required
+          #name="ngModel"
+        />
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+          Name is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          placeholder="Amount"
+          name="amount"
+          ngModel
+          required
+          #amount="ngModel"
+        />
+        <mat-error *ngIf="amount.invalid && (amount.dirty || amount.touched)">
+          Amount is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select name="category" ngModel required #category="ngModel">
+          <mat-option *ngFor="let category of categories" [value]="category">
+            {{ category }}
+          </mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="category.invalid && (category.dirty || category.touched)"
+        >
+          Category is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          matInput
+          placeholder="Description"
+          name="description"
+          ngModel
+        ></textarea>
+      </mat-form-field>
+      <mat-checkbox name="is_income" [(ngModel)]="is_income"
+        >Income</mat-checkbox
+      >
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!recordForm.valid"
+      >
+        Add
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
