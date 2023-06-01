@@ -15,6 +15,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddRecordComponent } from './pages/dashboard/add-record/add-record.component';
 import { SummaryCardComponent } from './pages/dashboard/summary-card/summary-card.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ExpensesTabComponent } from './pages/dashboard/summary-card/expenses-tab/expenses-tab.component';
+import { IncomesTabComponent } from './pages/dashboard/summary-card/incomes-tab/incomes-tab.component';
+import { CategoryDetailsComponent } from './pages/dashboard/summary-card/category-details/category-details.component';
+import { RecordTableComponent } from './pages/dashboard/summary-card/record-table/record-table.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     DashboardComponent,
     AddRecordComponent,
     SummaryCardComponent,
+    ExpensesTabComponent,
+    IncomesTabComponent,
+    CategoryDetailsComponent,
+    RecordTableComponent,
   ],
   imports: [
     BrowserModule,
