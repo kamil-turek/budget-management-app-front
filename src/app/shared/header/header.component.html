@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>Budget Management App</span>
+  <span routerLink="/dashboard">Budget Management App</span>
   <div class="header-btns">
     <ng-container *ngIf="authService.isLoggedIn(); else loggedOut">
       <button mat-raised-button (click)="logout()" color="warn">Logout</button>

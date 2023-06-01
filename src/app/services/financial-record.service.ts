@@ -20,4 +20,9 @@ export class FinancialRecordService {
     const url = `${this.URL}/finances`;
     return this.http.post<void>(url, record);
   }
+
+  getAllFinancialRecords(): Observable<FinancialRecord[]> {
+    const url = `${this.URL}/finances`;
+    return this.http.get<FinancialRecord[]>(url);
+  }
 }
