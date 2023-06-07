@@ -39,6 +39,7 @@ export class AddRecordComponent {
     this.financialRecordService.addFinancialRecord(record).subscribe(() => {
       this.recordForm.reset();
       this.resetValidationStates();
+      location.reload();
     });
   }
 

@@ -1,12 +1,22 @@
 <mat-list>
   <mat-divider></mat-divider>
   <mat-list-item *ngFor="let category of incomeCategories">
-    <a
-      matLine
-      (click)="navigateToCategoryDetails(category)"
-      style="cursor: pointer"
-    >
-      {{ category }}
-    </a>
+    <div class="list">
+      <a
+        matLine
+        (click)="navigateToCategoryDetails(category)"
+        style="cursor: pointer"
+      >
+        {{ category }}
+      </a>
+      <span>
+        {{ getCategorySummary(category) | currency }}
+      </span>
+    </div>
   </mat-list-item>
+  <mat-divider></mat-divider>
+  <div class="list">
+    <h2>TOTAL:</h2>
+    <h2>{{ overallIncomeAmount | currency }}</h2>
+  </div>
 </mat-list>

@@ -40,4 +40,24 @@ export class FinancialRecordService {
     const url = `${this.URL}/finances/${record.id}`;
     return this.http.patch<void>(url, record);
   }
+
+  getCategoryAmountsForRecords(
+    records: FinancialRecord[],
+    categories: string[]
+  ): { [category: string]: number } {
+    const categoryAmounts: { [category: string]: number } = {};
+
+    for (const category of categories) {
+      const filteredRecords = records.filter(
+        (record) => record.category === category
+      );
+      const total = filteredRecords.reduce(
+        (sum, record) => sum + record.amount,
+        0
+      );
+      categoryAmounts[category] = total;
+    }
+
+    return categoryAmounts;
+  }
 }
