@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FinancialRecordService } from 'src/app/services/financial-record.service';
 
 @Component({
   selector: 'app-expenses-tab',

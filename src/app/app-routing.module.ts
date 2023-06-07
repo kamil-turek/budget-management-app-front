@@ -5,6 +5,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CategoryDetailsComponent } from './pages/dashboard/summary-card/category-details/category-details.component';
+import { EditRecordComponent } from './pages/dashboard/summary-card/record-table/edit-record/edit-record.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'category-details/:category',
     component: CategoryDetailsComponent,
+  },
+  {
+    path: 'edit-record/:id',
+    component: EditRecordComponent,
   },
 ];
 

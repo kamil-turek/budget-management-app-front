@@ -19,6 +19,7 @@ import { ExpensesTabComponent } from './pages/dashboard/summary-card/expenses-ta
 import { IncomesTabComponent } from './pages/dashboard/summary-card/incomes-tab/incomes-tab.component';
 import { CategoryDetailsComponent } from './pages/dashboard/summary-card/category-details/category-details.component';
 import { RecordTableComponent } from './pages/dashboard/summary-card/record-table/record-table.component';
+import { EditRecordComponent } from './pages/dashboard/summary-card/record-table/edit-record/edit-record.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RecordTableComponent } from './pages/dashboard/summary-card/record-tabl
     IncomesTabComponent,
     CategoryDetailsComponent,
     RecordTableComponent,
+    EditRecordComponent,
   ],
   imports: [
     BrowserModule,

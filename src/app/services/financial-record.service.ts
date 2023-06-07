@@ -25,4 +25,19 @@ export class FinancialRecordService {
     const url = `${this.URL}/finances`;
     return this.http.get<FinancialRecord[]>(url);
   }
+
+  deleteFinancialRecord(id: number): Observable<void> {
+    const url = `${this.URL}/finances/${id}`;
+    return this.http.delete<void>(url);
+  }
+
+  getFinancialRecordById(id: number): Observable<FinancialRecord> {
+    const url = `${this.URL}/finances/${id}`;
+    return this.http.get<FinancialRecord>(url);
+  }
+
+  updateFinancialRecord(record: FinancialRecord): Observable<void> {
+    const url = `${this.URL}/finances/${record.id}`;
+    return this.http.patch<void>(url, record);
+  }
 }

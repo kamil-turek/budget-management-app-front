@@ -31,7 +31,6 @@ export class CategoryDetailsComponent {
         this.financialRecords = records.filter(
           (record) => record.category === category
         );
-        console.log(this.financialRecords);
       });
   }
 }

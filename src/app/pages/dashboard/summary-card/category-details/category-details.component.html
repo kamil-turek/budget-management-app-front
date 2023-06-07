@@ -2,10 +2,13 @@
   <mat-card-content> {{ categoryTitle }} </mat-card-content>
 </mat-card>
 
-<div *ngIf="financialRecords.length > 0">
+<div *ngIf="financialRecords && financialRecords.length > 0">
   <app-record-table [financialRecords]="financialRecords"></app-record-table>
 </div>
 
-<div *ngIf="financialRecords.length === 0" class="no-records">
+<div
+  *ngIf="!financialRecords || financialRecords.length === 0"
+  class="no-records"
+>
   <p>No records available for this category.</p>
 </div>
